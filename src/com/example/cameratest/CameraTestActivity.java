@@ -22,15 +22,15 @@ public class CameraTestActivity extends Activity {
         		startActivityForResult(getPicture, CAMERA_PIC_REQUEST);
         	}
         });
-    }    
+    }   
+    
     public static final int CAMERA_PIC_REQUEST = 999;    
-
         
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-    		 //if (requestCode == CAMERA_PIC_REQUEST) {
+    		 if (requestCode == CAMERA_PIC_REQUEST) {
     			ImageView image = (ImageView) findViewById(R.id.photoResultView);
     		    Bitmap thumbnail = (Bitmap) data.getExtras().get("data");
     			image.setImageBitmap(thumbnail);
-    		//}
+    		}
     }
 }
